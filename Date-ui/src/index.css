@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* background-color: #F7C7EC; */
+  background: url('./assets/iPad\ Wallpaper.jpeg') center/cover no-repeat fixed ; 
+  color: #6d0f56;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+p{
+  padding-top: 10px;
+}
+
+.invite-box {
+  max-width: 600px;
+  min-height: 500px;
+  margin: 8rem auto 4rem;
+  padding: 2rem;
+  color: #ffffff;
+  background-color: #d988c2;
+  box-shadow: 0 20px 40px rgba(109, 15, 86, 0.25), 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+}
+
+.invite-box h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.invite-box h3 {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.name,
+.name:visited {
+  color: inherit;
+  transition: color 0.5s ease;
+  text-decoration: none;
+}
+
+.name:hover{
+  color: #6a1a5c;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 10px;
+  background-color: rgb(94, 25, 85);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  border-radius: 15px;
+}
+
+.hint-popup {
+  position: relative;
+  max-width: 400px;
+  min-height: 100px;
+  margin: 4rem auto 4rem;
+  padding: 2rem;
+  color: #ffffff;
+  background-color: #a04987;
+  box-shadow: 0 20px 40px rgba(109, 15, 86, 0.25), 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pictures-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-width: 300px;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 2rem;
+}
+
+@media (min-width: 640px) {
+  .pictures-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pictures-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.picture-card {
+  height: 300px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.picture-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.picture-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.picture-card-front,
+.picture-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(109, 15, 86, 0.25), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.picture-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.picture-card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d988c2;
+  color:#d988c2;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transform: rotateY(180deg);
+}
+
+.picture-card-back:hover {
+  color: #ffffff;
+}
