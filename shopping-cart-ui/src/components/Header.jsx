@@ -36,7 +36,7 @@ const Header = () => {
                                                     <p className='text-gray-500 text-sm'>{item.quantity} x ${item.price.toFixed(2)}</p>
                                                 </div>
                                                 <div>
-                                                    <button onClick={()=>removeFromCart(item.id)} className='text-gray-500 hover:text-red-500'>
+                                                    <button onClick={()=>removeFromCart(item.id)} className='text-gray-500 hover:text-red-500 cursor-pointer'>
                                                         <FaTrash />
                                                     </button>
                                                 </div>
