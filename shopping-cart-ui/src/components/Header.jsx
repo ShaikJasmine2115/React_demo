@@ -49,7 +49,7 @@ const Header = () => {
                             <p className='text-gray-500 text-sm'>Total: </p>
                             <span>${cartValue}</span>
                         </div>
-                        <button className='w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'>Checkout</button>
+                        <button className='w-full bg-blue-600 text-white px-4 py-2 cursor-pointer rounded hover:bg-blue-700'>Checkout</button>
                     </div>
                 )}
             </div>

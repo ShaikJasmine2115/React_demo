@@ -8,7 +8,7 @@ const ProductCard = ({product}) => {
             <h2 className='text-xl font-semibold'>{product.name}</h2>
             <p className='text-gray-600 mb-2 text-sm'>{product.description}</p>
             <p className='font-bold text-lg'>${product.price.toFixed(2)}</p>
-            <button onClick={()=>addToCart(product)} className='mt-4 bg-blue-500 text-white px-4 py-2 rounded transition hover:bg-blue-600'>Add to Cart</button>
+            <button onClick={()=>addToCart(product)} className='mt-4 bg-blue-600 text-white px-4 py-2 cursor-pointer rounded transition hover:bg-blue-700'>Add to Cart</button>
           </div>
     )
 }
