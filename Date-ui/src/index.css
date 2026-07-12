@@ -38,8 +38,7 @@ p{
   margin-bottom: 2rem;
 }
 
-.name,
-.name:visited {
+.name {
   color: inherit;
   transition: color 0.5s ease;
   text-decoration: none;
