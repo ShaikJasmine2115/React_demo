@@ -1,5 +1,6 @@
 import type { Route } from "./+types/index";
 import type { Project } from "~/types";
+import ProjectCard from "~/components/ProjectCard";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -16,12 +17,17 @@ export async function loader({request}: Route.LoaderArgs): Promise<{projects: Pr
 
 const Projects = ({loaderData}: Route.ComponentProps) => {
     const {projects} = loaderData as {projects: Project[]};
-    console.log(projects);
+    // console.log(projects);
     return(
         <section>
             <h2 className="text-3xl font-bold mb-2 text-center">
                 Projects Page
             </h2>
+            <div className="grid gap-6 sm:grid-cols-2">
+                {projects.map((project)=>(
+                    <ProjectCard key={project.id} project={project} />
+                ))}
+            </div>
         </section>
         
     )
