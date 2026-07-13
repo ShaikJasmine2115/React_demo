@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 // same as useEffect hook
 export async function clientLoader({request, params}: Route.ClientLoaderArgs):Promise<{project: Project}>{
-    const res = await fetch(`http://localhost:8000/projects/${params.id}`);
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/projects/${params.id}`);
     const project: Project =await res.json();
     return {project};
 }

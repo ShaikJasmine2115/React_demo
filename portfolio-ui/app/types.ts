@@ -14,3 +14,8 @@ export type PaginationProps = {
   currentPage: number;
   onPageChange: (page: number) => void;
 }
+
+export type FeaturedProjectsProps = {
+  projects: Project[];
+  count: number;
+}
