@@ -1,6 +1,8 @@
 import type { Route } from "./+types/index";
 import type { Project } from "~/types";
 import ProjectCard from "~/components/ProjectCard";
+import Pagination from "~/components/Pagination";
+import {useState} from "react";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -17,17 +19,26 @@ export async function loader({request}: Route.LoaderArgs): Promise<{projects: Pr
 
 const Projects = ({loaderData}: Route.ComponentProps) => {
     const {projects} = loaderData as {projects: Project[]};
-    // console.log(projects);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 2;
+    
+    const totalPages = Math.ceil(projects.length / itemsPerPage);
+    const indexOfLast = currentPage * itemsPerPage;
+    const indexOfFirst = indexOfLast - itemsPerPage;
+    const currentProjects = projects.slice(indexOfFirst, indexOfLast);
+
+    
     return(
         <section>
             <h2 className="text-3xl font-bold mb-2 text-center">
                 Projects Page
             </h2>
             <div className="grid gap-6 sm:grid-cols-2">
-                {projects.map((project)=>(
+                {currentProjects.map((project)=>(
                     <ProjectCard key={project.id} project={project} />
                 ))}
             </div>
+            <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage} />
         </section>
         
     )
