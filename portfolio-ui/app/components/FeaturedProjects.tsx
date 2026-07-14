@@ -6,7 +6,7 @@ const FeaturedProjects = ({projects, count = 4}: FeaturedProjectsProps) => {
     const featuredProjects = projects.filter((project) => project.featured).slice(0, count);
     return(
         <section>
-            <h2 className="text-2xl font-bold mb-6 text-blue-800">
+            <h2 className="text-2xl font-bold mb-6">
                 Featured Projects
             </h2>
             <div className="grid gap-6 sm:grid-cols-2">

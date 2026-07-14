@@ -29,7 +29,8 @@ const ProjectDetails = ({loaderData}: Route.ComponentProps) => {
                 <div>
                     <h1 className="text-4xl font-bold text-blue-400 mb-4">{project.title}</h1>
                     <p className="text-blue-900 mb-6">{new Date(project.date).toLocaleDateString()} | {project.category}</p>
-                    <p className="text-blue-900 mb-6">{project.description}</p>
+                    <p className="mb-6 font-semibold text-lg">{project.description}</p>
+                    <p className="mb-6">{project.details}</p>
                     <a href={project.url} target="_blank" className="inline-block text-white bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded transition"> View Live Site </a>
                 </div>
             </div>

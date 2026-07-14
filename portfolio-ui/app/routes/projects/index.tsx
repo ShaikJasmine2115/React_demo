@@ -36,8 +36,8 @@ const Projects = ({loaderData}: Route.ComponentProps) => {
     
     return(
         <section>
-            <h2 className="text-3xl font-bold mb-2 text-center">
-                Projects Page
+            <h2 className="text-3xl font-bold mb-6 ">
+                Projects
             </h2>
             <div className="flex flex-wrap gap-2 mb-8">
                 {categories.map((category)=>(
@@ -57,9 +57,8 @@ const Projects = ({loaderData}: Route.ComponentProps) => {
                         </motion.div>
                     ))}
                 </motion.div>
-
             </AnimatePresence>
-            
+                       
             <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={setCurrentPage} />
         </section>
         
