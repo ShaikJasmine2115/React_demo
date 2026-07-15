@@ -40,3 +40,8 @@ export type PostFilterProps = {
   searchQuery: string;
   onSearchChange: (value: string) => void;
 }
+
+export type LatestPostProps = {
+  posts: BlogPost[];
+  limit?: number;
+}
