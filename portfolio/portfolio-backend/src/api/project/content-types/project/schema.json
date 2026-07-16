@@ -11,14 +11,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Description": {
+    "description": {
       "type": "text"
     },
-    "Image": {
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -28,13 +28,13 @@
         "audios"
       ]
     },
-    "URL": {
+    "url": {
       "type": "string"
     },
-    "Date": {
+    "date": {
       "type": "date"
     },
-    "Category": {
+    "category": {
       "type": "enumeration",
       "default": "Frontend",
       "enum": [
@@ -44,9 +44,12 @@
         "Mobile"
       ]
     },
-    "Featured": {
+    "featured": {
       "type": "boolean",
       "default": false
+    },
+    "details": {
+      "type": "text"
     }
   }
 }

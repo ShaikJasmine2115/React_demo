@@ -1,9 +1,9 @@
 import type { LatestPostProps } from "~/types";
 import {Link} from "react-router";
-import type { BlogPost } from "~/types";
+import type { Post } from "~/types";
 
 const LatestPost = ({posts, limit=3}: LatestPostProps) => {
-    const sortedPosts = [...posts].sort((a: BlogPost, b: BlogPost) => 
+    const sortedPosts = [...posts].sort((a: Post, b: Post) => 
         new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
