@@ -26,7 +26,7 @@ export async function loader({request}: Route.LoaderArgs): Promise<{ posts: Post
         date: post.date,
         body: post.body,
         image: post.image?.url
-        ? `${import.meta.env.VITE_STRAPI_URL}${post.image.url}`
+        ? `${post.image.url}`
         : "/images/no-image.png",
     }));
 
